@@ -13,8 +13,9 @@ class SubjectModel extends Connection{
 
     public function getSubject($id){
         $sql = "SELECT * FROM `subject` WHERE `subject_id` = $id";
-        $result = $this->connect()->query($sql)->fetch_all(MYSQLI_ASSOC);
-        return $result;
+        $result = $this->connect()->query($sql);
+        $obj = mysqli_fetch_object($result);
+        return $obj;
     }
 
     public function addSubject($arr){

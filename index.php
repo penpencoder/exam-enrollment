@@ -1,8 +1,12 @@
 <?php
 //require 'models/student.php';
-require 'controllers/StudentController.php';
+require_once 'controllers/StudentController.php';
+//require_once 'controllers/SubjectController.php';
 
-$test = new StudentController;
+$stud_controller = new StudentController;
+//$subj_controller = new SubjectController;
 
-$test->index();
+//$subj_controller->handleRequest();
+
+$stud_controller->handleRequest();
 ?>

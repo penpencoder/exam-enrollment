@@ -12,8 +12,10 @@ class StudentModel extends Connection{
 
     public function getStudent($id){
         $sql = "SELECT * FROM `student` WHERE `id` = $id";
-        $result = $this->connect()->query($sql)->fetch_all(MYSQLI_ASSOC);
-        return $result;
+        $result = $this->connect()->query($sql);
+        $obj = mysqli_fetch_object($result);
+
+        return $obj;
     }
 
     public function addStudent($arr){
